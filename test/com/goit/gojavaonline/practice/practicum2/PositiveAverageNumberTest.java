@@ -4,6 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PositiveAverageNumberTest {
+    PositiveAverageNumber positiveAverageNumber = new PositiveAverageNumber();
 
     @Test
     public void testForTwoAndFour() throws Exception {
@@ -15,7 +16,7 @@ public class PositiveAverageNumberTest {
         System.out.println(Integer.MIN_VALUE);
         System.out.println(Integer.MIN_VALUE/2);
 
-        int actualResult = PositiveAverageNumber.average(a,b);
+        int actualResult = positiveAverageNumber.average(a,b);
         assertEquals("Average of 2 and 4 is not 3",expected,actualResult);
     }
 
@@ -25,7 +26,7 @@ public class PositiveAverageNumberTest {
         int b = 2147483647;
         int expected = 2147483647;
 
-        int actualResult = PositiveAverageNumber.average(a,b);
+        int actualResult = positiveAverageNumber.average(a,b);
         assertEquals("Average of two 2147483647 is not 2147483647",expected,actualResult);
     }
 
@@ -35,7 +36,7 @@ public class PositiveAverageNumberTest {
         int b = 1073741824;
         int expected = 1073741824;
 
-        int actualResult = PositiveAverageNumber.average(a,b);
+        int actualResult = positiveAverageNumber.average(a,b);
         assertEquals("Average of two 1073741824 is not 1073741824",expected,actualResult);
     }
 

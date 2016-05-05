@@ -1,6 +1,6 @@
 package com.goit.gojavaonline.practice.practicum2;
 
-public class PositiveAverageNumber {
+public class AverageNumber {
     public int average(int a, int b) {
         if (a == Integer.MAX_VALUE && b == Integer.MAX_VALUE) {
             return Integer.MAX_VALUE;
