@@ -12,7 +12,13 @@ public class AddNumberBase36Test {
         String a = "9";
         String b = "1";
         String expected = "a";
-
+        System.out.println(a.length());
+        System.out.println(b.length());
+        String str = "bcd";
+        for(int i=0; i<str.length();i++) {
+            char ch = str.charAt(i);
+            System.out.println("Character at " + i + " Position: " + ch);
+        }
         String actual = addNumberBase36.add(a, b);
         assertEquals("9 & 1 are summed incorrect", expected, actual);
 
