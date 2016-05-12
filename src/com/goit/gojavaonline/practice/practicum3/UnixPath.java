@@ -13,8 +13,6 @@ public class UnixPath {
         String twoPoints = "..";
 
         for (int i = 0; i < input.length(); i++) {
-//            String point = point;
-//            String twoPoints = twoPoints;
 
             if (input.charAt(i) == '/' && pathBuilder.length() > 0) {
                 if (point.equals(pathBuilder.toString())) {
