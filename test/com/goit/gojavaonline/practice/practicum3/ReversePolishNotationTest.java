@@ -24,13 +24,4 @@ public class ReversePolishNotationTest {
         int actual = reversePolishNotation.evaluate(expression);
         assertEquals(expected, actual);
     }
-
-    @Test
-    public void testName() throws Exception {
-        String expression =  "12 2 3 4 * 10 5 / + * +";
-
-        System.out.println(expression.charAt(5));
-        System.out.println(Character.isDigit(expression.charAt(5)));
-
-    }
 }
