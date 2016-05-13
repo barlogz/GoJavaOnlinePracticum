@@ -43,4 +43,13 @@ public class LongestStabilityPeriodTest {
         int actual = longestStabilityPeriod.count(input);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testCountWithFourteenMonths() throws Exception {
+        int[] input = {902, 902, 901, 902, 902, 903, 902, 902, 901, 902, 901, 901, 902, 903};
+        int expected = 7;
+
+        int actual = longestStabilityPeriod.count(input);
+        assertEquals(expected, actual);
+    }
 }
