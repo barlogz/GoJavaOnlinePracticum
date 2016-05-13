@@ -29,12 +29,12 @@ public class RectangleSquareTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void testTEST() throws Exception {
-        int[] x = {0 ,0};
-        int[] h = {20, 10};
-        int[] w = {10, 20};
-
-        System.out.println(rectangleSquare.measure(x, h, w));
-    }
+//    @Test
+//    public void testTEST() throws Exception {
+//        int[] x = {0 ,0};
+//        int[] h = {20, 10};
+//        int[] w = {10, 20};
+//
+//        System.out.println(rectangleSquare.measure(x, h, w));
+//    }
 }

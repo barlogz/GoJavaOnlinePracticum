@@ -55,8 +55,15 @@ public class RectangleSquare {
         int multipliedMinimumValuesSides = minHeight * minWidth;
         int multipliedMaximumValuesSides = maxHeight * maxWidth;
 
-        int result = multipliedMaximumValuesSides - multipliedMinimumValuesSides;
-        int result = multipliedMaximumValuesSides - multipliedMinimumValuesSides;
+        int multipliedByMaxXValue = w[maxXIndex] * ((x[maxXIndex] - x[minXIndex]) + h[maxXIndex]);
+        int multipliedByMinXValue = w[minXIndex] * h[minXIndex];
+
+        int sumOfMultipliedByXValue = multipliedByMaxXValue + multipliedByMinXValue;
+
+
+
+        int result = sumOfMultipliedByXValue - multipliedMinimumValuesSides;
+//        int result = multipliedMaximumValuesSides - multipliedMinimumValuesSides;
 
 
         return result;
