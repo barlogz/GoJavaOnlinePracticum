@@ -2,9 +2,7 @@ package com.goit.gojavaonline.practice.practicum3;
 
 public class LongestStabilityPeriod {
     public int count(int[] gdp) {
-        int counter = 0;
-        int min = 0;
-        int max = 0;
+        int counter, min, max;
         int result = 0;
 
         for (int i = 0; i < gdp.length; i++) {
