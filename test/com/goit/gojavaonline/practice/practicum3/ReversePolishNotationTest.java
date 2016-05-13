@@ -17,6 +17,15 @@ public class ReversePolishNotationTest {
     }
 
     @Test
+    public void testForOneElement() throws Exception {
+        String expression =  "3";
+        int expected = 3;
+
+        int actual = reversePolishNotation.evaluate(expression);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testName() throws Exception {
         String expression =  "12 2 3 4 * 10 5 / + * +";
 
