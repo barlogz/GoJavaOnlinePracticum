@@ -13,13 +13,10 @@ public class BinaryHeapTest {
         binaryHeap1.insert(2);
 
         int[] testArr = {2, 0};
-        binaryHeap1.print();
-//        assertArrayEquals(testArr, binaryHeap1(2));
-
-//        assertEquals(2, binaryHeap1.poll());
+        assertArrayEquals(testArr, binaryHeap1.heap);
+        assertEquals(2, binaryHeap1.poll());
     }
 
-    /*
     @Test
     public void binaryHeap2() throws Exception {
         BinaryHeap binaryHeap2 = new BinaryHeap(8);
@@ -43,9 +40,8 @@ public class BinaryHeapTest {
         binaryHeap2.print();
 
         int[] testArr = {8, 7, 5, 6, 2, 1, 4, 3};
-        assertArrayEquals(testArr, binaryHeap2.binaryHeap);
+        assertArrayEquals(testArr, binaryHeap2.heap);
 
         assertEquals(8, binaryHeap2.poll());
     }
-    */
 }

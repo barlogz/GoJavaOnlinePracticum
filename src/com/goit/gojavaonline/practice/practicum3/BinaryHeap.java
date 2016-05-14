@@ -1,94 +1,63 @@
 package com.goit.gojavaonline.practice.practicum3;
 
-import java.util.Arrays;
-import java.util.NoSuchElementException;
-
 public class BinaryHeap {
-    private static final int d = 2;
-    private int heapSize;
-    private int[] heap;
+    public int[] heap;
+    int heapSize = 0;
 
     public BinaryHeap(int size) {
-        heapSize = 0;
-        heap = new int[size + 1];
-        Arrays.fill(heap, -1);
+        heap = new int[size];
     }
 
     public void insert(int val) {
-        if (heapSize == heap.length)
-            throw new NoSuchElementException("Overflow Exception");
-        heap[heapSize++] = val;
-        heapifyUp(heapSize - 1);
-    }
+        heap[heapSize] = val;
 
-    private int parent(int childInd) {
-        return (childInd - 1) / d;
-    }
+        int i = heapSize;
+        int node = (i - 1) / 2;
+        while (i > 0 && (heap[i] > heap[node])) {
+            int temp = heap[i];
+            heap[i] = heap[node];
+            heap[node] = temp;
 
-    private int kthChild(int i, int k) {
-        return d * i + k;
-    }
-
-    private void heapifyUp(int childInd) {
-        int temp = heap[childInd];
-        while (childInd > 0 && temp < heap[parent(childInd)]) {
-            heap[childInd] = heap[parent(childInd)];
-            childInd = parent(childInd);
+            i = node;
+            node = (i - 1) / 2;
         }
-        heap[childInd] = temp;
-    }
 
-    private void heapifyDown(int ind) {
-        int child;
-        int temp = heap[ind];
-        while (kthChild(ind, 1) < heapSize) {
-            child =  minChild(ind);
-            if (heap[child] < temp) {
-                heap[ind] = heap[child];
-            } else {
+        if (heapSize < heap.length - 1) {
+            heapSize++;
+        }
+    }
+    public int poll() {
+        int result = heap[0];
+        heap[0] = 0;
+
+        int i = 0;
+        while(true) {
+            int parent = i;
+            int left = i * 2 + 1;
+            int right = i * 2 + 2;
+
+            if (right < heap.length && heap[parent] < heap[right]) {
+                parent = right;
+            }
+            if (left < heap.length && heap[parent] < heap[left]) {
+                parent = left;
+            }
+            if (parent == i) {
                 break;
             }
-            ind = child;
+
+            int temp = heap[i];
+            heap[i] = heap[parent];
+            heap[parent] = temp;
+
+            i = parent;
         }
-        heap[ind] = temp;
-    }
-
-    private int minChild(int ind) {
-        int smallestChild = kthChild(ind, 1);
-        int k = 2;
-        int position = kthChild(ind, k);
-        while ((k <= d) && (position < heapSize)){
-            if (heap[position] < heap[smallestChild]) {
-                smallestChild = position;
-            }
-            position = kthChild(ind, k++);
-        }
-        return smallestChild;
-    }
-
-    public int poll() {
-        int keyItem = heap[0];
-        delete(0);
-        return keyItem;
-
-//        if (heapSize == 0)
-//            throw new NoSuchElementException();
-//        return heap[0];
-    }
-
-    public int delete(int ind) {
-        if (heapSize == 0)
-            throw new NoSuchElementException("Underflow Exception");
-        int keyItem = heap[ind];
-        heap[ind] = heap[heapSize -1];
-        heapSize--;
-        heapifyDown(ind);
-        return keyItem;
+        return result;
     }
 
     public void print() {
         for (int element : heap) {
-            System.out.print(element + "   ");
+            System.out.print(element + ", ");
         }
         System.out.println();
     }
