@@ -29,6 +29,17 @@ public class RectangleSquareTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void testWithThreeElements() throws Exception {
+        int[] x = {0 ,10, 30};
+        int[] h = {20, 10, 20};
+        int[] w = {20, 30, 20};
+
+        int expected = 900;
+        int actual = rectangleSquare.measure(x, h, w);
+        assertEquals(expected, actual);
+    }
+
 //    @Test
 //    public void testTEST() throws Exception {
 //        int[] x = {0 ,0};
