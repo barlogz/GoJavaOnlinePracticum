@@ -15,7 +15,7 @@ public class AddBinary {
             int add = m + n + temp;
             sum.append(add % 2);
             temp = add / 2;
-        }wqerag
+        }
         if (temp == 1)
             sum.append("1");
 
