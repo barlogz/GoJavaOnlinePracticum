@@ -23,22 +23,6 @@ public class WordNumberTest {
 
         int actual = wordNumber.count(input);
         assertEquals(expected, actual);
-//        System.out.println(Character.getName('/'));
-//        System.out.println(Character.getName('('));
-//        System.out.println(Character.getNumericValue('/'));
-//        System.out.println(Character.getDirectionality('/'));
-        System.out.println(Character.getType('/'));
-        System.out.println(Character.getType('.'));
-        System.out.println(Character.getType(':'));
-        System.out.println(Character.getType('\''));
-        System.out.println(Character.getType('('));
-        System.out.println(Character.getType(')'));
-        System.out.println(Character.getType('?'));
-        System.out.println(Character.getType('-'));
-//        System.out.println(Character.compare('/','/'));
-//        System.out.println(Character.hashCode('/'));
-        //Input: [len: 43] ""one.two:three four\nfive(six)? ?:seven-eight""
-
     }
 
     @Test
@@ -86,8 +70,3 @@ public class WordNumberTest {
         assertEquals(expected, actual);
     }
 }
-
-
-//Input: [len: 43] ""one.two:three four\nfive(six)? ?:seven-eight""
-//        Expected: 8
-//        Actual: "6"
